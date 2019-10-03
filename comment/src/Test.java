@@ -1,17 +1,15 @@
+import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Test {
-    public static void main(String[] args) {
-        var code = new Code();
+    public static void main(String[] args) throws IOException {
+        String path;
 
-        var in = new Scanner(System.in);
-        String line;
+        var sc = new Scanner(System.in);
+        path = sc.nextLine();
 
-        while ((line = in.nextLine()).length() != 0) {
-            code.addLine(line);
-        }
-
-        var cleanCodeRegex = code.removeCommentsRegex();
-        System.out.println(cleanCodeRegex);
+        var files = new Files();
+        files.filesFromFolder(new File(path));
     }
 }
