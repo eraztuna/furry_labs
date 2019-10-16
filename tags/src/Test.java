@@ -15,7 +15,7 @@ public class Test {
         Fragments notFoundFragments = fragments.getNotFoundFragments(text);
         output.writeNotFoundFragments(notFoundFragments);
 
-        Tags tags = text.getTags();
+        Tags tags = text.getTags().unique();
         output.writeTags(tags.sorted());
     }
 }

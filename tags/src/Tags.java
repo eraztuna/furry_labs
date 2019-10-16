@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Tags {
     List<String> tags;
@@ -21,6 +19,11 @@ public class Tags {
         List<String> sortedTags = tags;
         sortedTags.sort(Comparator.comparingInt(String::length));
         return new Tags(sortedTags);
+    }
+
+    public Tags unique() {
+        Set<String> uniqueTags = new HashSet<>(tags);
+        return new Tags(new ArrayList<String>(uniqueTags));
     }
 
     @Override
